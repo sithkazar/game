@@ -596,7 +596,7 @@ View_3:{
 &lt;&lt;set _room to _args[0]&gt;&gt;
 &lt;div class=&quot;containerdiv&quot; style=&quot;text-align:center;&quot;&gt;
 
-&lt;img @src=&quot;$location[_room].image&quot; usemap=&quot;#image-map&quot; style=&quot;max-width:100vw; max-height:85vh; align:center; min-height:85vh;&quot;&gt;
+&lt;img @src=&quot;$location[_room].image&quot; usemap=&quot;#image-map&quot; style=&quot;max-width:100vw; max-height:65vh; align:center; min-height:65vh;&quot;&gt;
 &lt;map name=&quot;image-map&quot;&gt;
 &lt;&lt;set _view to Object.keys($location[_room])&gt;&gt;
 
@@ -661,6 +661,7 @@ Cursor types: forward, reverse, right, left, inspect, lean_left, lean_right, gra
 
 --&gt;</tw-passagedata><tw-passagedata pid="10" name="items" tags="widget" position="825,150" size="100,100">&lt;&lt;widget &quot;items&quot;&gt;&gt;
 &lt;&lt;set _room to _args[0]&gt;&gt;
+
 &lt;&lt;set _room to _room.toLowerCase()&gt;&gt;
 &lt;&lt;set _container to &quot;$&quot; +_room&gt;&gt;
 
@@ -676,10 +677,12 @@ Cursor types: forward, reverse, right, left, inspect, lean_left, lean_right, gra
 &lt;&lt;set _y to $items[_item][_location[_i]].y&gt;&gt;
 &lt;&lt;set _x to $items[_item][_location[_i]].x&gt;&gt;
 &lt;span class=&quot;inspect&quot; @style=&quot;&#39;width: &#39;+_width+&#39;vw; top:&#39;+_y+&#39;vh; left:&#39;+_x+&#39;vw; z-index: 1; position: absolute;&#39;&quot;&gt;
+&lt;&lt;capture _item &gt;&gt;
 &lt;&lt;click [img[_image]]&gt;&gt;
 &lt;&lt;transfer _container $backpack _item 1&gt;&gt;
 &lt;&lt;script&gt;&gt;state.display(state.active.title, null, &quot;back&quot;)&lt;&lt;/script&gt;&gt;
 &lt;&lt;/click&gt;&gt;
+&lt;&lt;/capture&gt;&gt;
 &lt;/span&gt;
 
 &lt;&lt;/if&gt;&gt;
