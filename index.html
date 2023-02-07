@@ -521,15 +521,15 @@ $(document).on(":passagerender", function (event) {
 	$(event.content).find("map").imageMapResize();
 });
 /* Image Map Resizer - End */
-</script><tw-tag name="widget" color="blue"></tw-tag><tw-tag name="TEMPLATES" color="blue"></tw-tag><tw-tag name="TEMPLATE" color="green"></tw-tag><tw-tag name="Notes" color="green"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="nobr" color="none"></tw-tag><tw-passagedata pid="1" name="StoryBottomSidebar" tags="data" position="825,25" size="100,100">
-&lt;table class=&quot;scroll&quot;&gt;
+</script><tw-tag name="widget" color="blue"></tw-tag><tw-tag name="TEMPLATES" color="blue"></tw-tag><tw-tag name="TEMPLATE" color="green"></tw-tag><tw-tag name="Notes" color="green"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="nobr" color="none"></tw-tag><tw-passagedata pid="1" name="StoryBottomSidebar" tags="data" position="825,25" size="100,100">&lt;table class=&quot;scroll&quot;&gt;
 &lt;tr&gt;
     &lt;&lt;for _item, _amount range $backpack.table&gt;&gt;
 &lt;td&gt;
+&lt;div class = &quot;mytooltip&quot;&gt;
+&lt;div class=&#39;item-listing&#39;&gt;
 &lt;&lt;set _image to $items[_item].inv_image&gt;&gt;
-       &lt;div class = &quot;mytooltip&quot;&gt;
-       &lt;div class=&#39;item-listing&#39;&gt;
-      &lt;span class = &quot;mytext&quot;&gt;$item[_item].description&lt;/span&gt;    
+&lt;&lt;set _description to $items[_item].description&gt;&gt;
+ &lt;span class = &quot;mytext&quot;&gt;_description&lt;/span&gt;
         &lt;img @src=&quot;_image&quot; width=&quot;50vw&quot; height=&quot;50vh&quot;&gt;
         &lt;&lt;if _amount gt 1&gt;&gt;
         &lt;div class=&quot;circle&quot;&gt; _amount&lt;/div&gt;
@@ -565,8 +565,8 @@ View_3:{
 &lt;!-- Create all items --&gt;
 &lt;&lt;set $items[&#39;key&#39;] = {
     image: &quot;https://raw.githubusercontent.com/sithkazar/game/main/items/key.png&quot;,
-   inv_image:&quot;https://raw.githubusercontent.com/sithkazar/game/main/items/key.png&quot;,
-    description: &quot;a key&quot;,
+    inv_image:&quot;https://raw.githubusercontent.com/sithkazar/game/main/items/key.png&quot;,
+    description: &quot;Old Fashion Key&quot;,
     drawer: {
     	width: &quot;18&quot;,
    	 	x: &quot;50&quot;,
@@ -579,7 +579,7 @@ View_3:{
    &lt;&lt;set $items[&#39;note&#39;] = {
     image: &quot;https://raw.githubusercontent.com/sithkazar/game/main/items/note_1.png&quot;,
     inv_image:&quot;https://raw.githubusercontent.com/sithkazar/game/main/items/note_2.png&quot;,
-    description: &quot;a suspicious note&quot;,
+    description: &quot;Suspicious Note&quot;,
     drawer: {
     	width: &quot;18&quot;,
    	 	x: &quot;30&quot;,
